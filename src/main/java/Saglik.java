@@ -1,6 +1,6 @@
 public abstract class Saglik implements ISaglik{
-    Birey [] asilananlar=new Birey[10];
-    int asilananSayisi=0;
+    public static Birey [] asilananlar=new Birey[10];
+    public static int asilananSayisi=0;
 
     public int getAsilananSayisi() {
         return asilananSayisi;
@@ -12,9 +12,9 @@ public abstract class Saglik implements ISaglik{
 
 
     public void asilamaYap(Birey birey) {
-        if (birey.bulastirirMi==false){
+        if (!birey.bulastirirMi){
             System.out.println(birey.ad+" süper insan aşılanması gerekmez.");
-        }else if (birey.hastalanirMi==true){
+        }else if (birey.hastalanirMi){
             System.out.println(birey.ad+" aşılandı.");
             birey.asiDurumu=true;
             birey.hastalanirMi=false;
